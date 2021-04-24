@@ -17,7 +17,7 @@ class SponsorableTest extends TestCase
     /** @test **/
    public function find_sponsorable_by_slug()
    {
-   		$sponsorable = factory(Sponsorable::class)->create(['slug' => 'full-stack-radio']);
+   		$sponsorable = Sponsorable::factory()->create(['slug' => 'full-stack-radio']);
 
    		$foundSponsorable = Sponsorable::findOrFailBySlug('full-stack-radio');
 
@@ -35,7 +35,7 @@ class SponsorableTest extends TestCase
     /** @test **/
    public function sponsorable_slots_belongs_to_sponsorable()
    {
-       $sponsorable = factory(Sponsorable::class)->create(['slug' => 'full-stack-radio']);
+       $sponsorable = Sponsorable::factory()->create(['slug' => 'full-stack-radio']);
 
        $this->assertInstanceOf(Collection::class, $sponsorable->slots);
    }
